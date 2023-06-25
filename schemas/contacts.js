@@ -10,8 +10,6 @@ const contactsSchema = Joi.object({
 
 const updateFavoriteSchema = Joi.object({ favorite: Joi.boolean().required() });
 
-const subscriptionCheck = Joi.object({
-  subscription: Joi.string().required,
-});
 
-module.exports = { contactsSchema, updateFavoriteSchema, subscriptionCheck };
+
+module.exports = { contactsSchema, updateFavoriteSchema };

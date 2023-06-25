@@ -20,5 +20,10 @@ router.post("/users/logout", authenticate, authCtrl.logout);
 
 router.get("/users/current", authenticate, authCtrl.getCurrent);
 
-// router.patch("/users", ctrl.subscriptionCheck);
+router.patch(
+  "/users",
+  validateBody(users.subscriptionCheckSchema),
+  authenticate,
+  authCtrl.updateSubscription
+);
 module.exports = router;

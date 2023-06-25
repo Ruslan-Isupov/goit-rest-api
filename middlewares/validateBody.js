@@ -4,7 +4,6 @@ const validateBody = (schema) => {
   const func = (req, res, next) => {
     const { error } = schema.validate(req.body);
     if (error) {
-      // next(HttpError(400, "missing required name field"));
       next(HttpError(400, "False from Joi or another validation library"));
       // next(HttpError(400, { message: "missing required name field" }));
     }
