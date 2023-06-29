@@ -26,11 +26,13 @@ router.patch(
   authenticate,
   authCtrl.updateSubscription
 );
-
+router.get("/verify/:verificationCode", authCtrl.verify);
 router.patch(
   "/users/avatars",
   authenticate,
   upload.single("avatar"),
   authCtrl.updateAvatar
 );
+router.post("/verify", validateBody(users.emailSchema), authCtrl.resendVerify);
+
 module.exports = router;
