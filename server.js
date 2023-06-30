@@ -1,4 +1,3 @@
-// const { error } = require("console");
 const app = require("./app");
 const mangoose = require("mongoose");
 

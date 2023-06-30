@@ -33,4 +33,13 @@ router.patch(
   upload.single("avatar"),
   authCtrl.updateAvatar
 );
+
+router.get("/users/verify/:verificationCode", authCtrl.verify);
+
+router.post(
+  "/users/verify",
+  validateBody(users.emailSchema),
+  authCtrl.resendVerify
+);
+
 module.exports = router;
