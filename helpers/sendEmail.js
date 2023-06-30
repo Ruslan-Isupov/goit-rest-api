@@ -16,21 +16,10 @@ const nodemailerConfig = {
 
 const transport = nodemailer.createTransport(nodemailerConfig);
 
-// const email = {
-//
-//   to: "risupov44@gmail.com",
-//   subject: "Verify email",
-//   html: "<p>Verify email</p>",
-// };
-
 const sendEmail = async (data) => {
   const email = { ...data, from: UKR_NET_EMAIL };
   await transport.sendMail(email);
   return true;
 };
 
-// transport
-//   .sendMail(email)
-//   .then(() => console.log("Email send success"))
-//   .catch((error) => console.log(error.message));
 module.exports = sendEmail;
